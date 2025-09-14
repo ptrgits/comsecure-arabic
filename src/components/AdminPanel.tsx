@@ -157,11 +157,11 @@ const AdminPanel = () => {
       <div className="flex items-center gap-3">
         <Shield className="w-8 h-8 text-glow" />
         <div>
-          <h1 className="text-2xl font-mono font-bold text-glow">
-            ADMIN CONTROL PANEL
+          <h1 className="text-2xl font-mono font-bold text-glow" dir="rtl">
+            لوحة التحكم الإدارية
           </h1>
-          <p className="text-sm text-text-secondary font-mono">
-            Real-time monitoring and message management
+          <p className="text-sm text-text-secondary font-mono" dir="rtl">
+            مراقبة في الوقت الفعلي وإدارة الرسائل
           </p>
         </div>
       </div>
@@ -170,9 +170,9 @@ const AdminPanel = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card className="bg-surface border-metallic/30">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2">
+            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2" dir="rtl">
               <MessageSquare className="w-4 h-4" />
-              TOTAL MESSAGES
+              إجمالي الرسائل
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -184,9 +184,9 @@ const AdminPanel = () => {
 
         <Card className="bg-surface border-metallic/30">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2">
+            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2" dir="rtl">
               <Users className="w-4 h-4" />
-              ACTIVE USERS
+              المستخدمون النشطون
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -198,9 +198,9 @@ const AdminPanel = () => {
 
         <Card className="bg-surface border-metallic/30">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2">
+            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2" dir="rtl">
               <MessageSquare className="w-4 h-4" />
-              CHANNELS
+              القنوات
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -212,9 +212,9 @@ const AdminPanel = () => {
 
         <Card className="bg-surface border-metallic/30">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2">
+            <CardTitle className="text-sm font-mono text-metallic flex items-center gap-2" dir="rtl">
               <AlertTriangle className="w-4 h-4" />
-              DELETED
+              محذوف
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -229,10 +229,11 @@ const AdminPanel = () => {
       <div className="flex gap-4">
         <div className="flex-1">
           <Input
-            placeholder="Search messages or users..."
+            placeholder="البحث في الرسائل أو المستخدمين..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-surface border-metallic/30 text-text-primary placeholder:text-text-muted font-mono"
+            className="bg-surface border-metallic/30 text-text-primary placeholder:text-text-muted font-mono text-right"
+            dir="rtl"
           />
         </div>
         <select
@@ -240,7 +241,7 @@ const AdminPanel = () => {
           onChange={(e) => setSelectedChannel(e.target.value)}
           className="px-3 py-2 bg-surface border border-metallic/30 rounded-md text-text-primary font-mono text-sm"
         >
-          <option value="all">All Channels</option>
+          <option value="all">جميع القنوات</option>
           {channels.map(channel => (
             <option key={channel.id} value={channel.id}>
               #{channel.name}
@@ -252,9 +253,9 @@ const AdminPanel = () => {
       {/* Messages List */}
       <Card className="bg-surface border-metallic/30 flex-1">
         <CardHeader>
-          <CardTitle className="text-lg font-mono text-glow flex items-center gap-2">
+          <CardTitle className="text-lg font-mono text-glow flex items-center gap-2" dir="rtl">
             <Eye className="w-5 h-5" />
-            MESSAGE MONITORING
+            مراقبة الرسائل
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
@@ -282,8 +283,8 @@ const AdminPanel = () => {
                           {formatTime(msg.created_at)}
                         </span>
                         {msg.is_deleted && (
-                          <Badge variant="destructive" className="text-xs font-mono">
-                            DELETED
+                          <Badge variant="destructive" className="text-xs font-mono" dir="rtl">
+                            محذوف
                           </Badge>
                         )}
                       </div>
@@ -297,7 +298,7 @@ const AdminPanel = () => {
                       {msg.is_deleted && msg.deleted_by && (
                         <div className="text-xs text-destructive font-mono mt-2 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          Deleted by {msg.deleted_by} at {formatTime(msg.deleted_at!)}
+                          حذف بواسطة {msg.deleted_by} في {formatTime(msg.deleted_at!)}
                         </div>
                       )}
                     </div>
@@ -317,8 +318,8 @@ const AdminPanel = () => {
               ))}
               
               {filteredMessages.length === 0 && (
-                <div className="text-center py-8 text-text-muted font-mono">
-                  No messages found matching your criteria
+                <div className="text-center py-8 text-text-muted font-mono" dir="rtl">
+                  لم يتم العثور على رسائل تطابق معاييرك
                 </div>
               )}
             </div>

@@ -232,11 +232,11 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
       {/* Voice Instructions */}
       {!isConnected && !connectionError && (
         <div className="pt-3 border-t border-metallic/20">
-          <div className="text-xs text-text-muted font-mono space-y-1">
-            <p>• Click "JOIN VOICE" to start voice communication</p>
-            <p>• Allow microphone access when prompted</p>
-            <p>• Use mute/deafen controls during conversation</p>
-            <p>• Voice chat is peer-to-peer encrypted</p>
+          <div className="text-xs text-text-muted font-mono space-y-1" dir="rtl">
+            <p>• انقر "انضم للصوت" لبدء التواصل الصوتي</p>
+            <p>• اسمح بالوصول للميكروفون عند الطلب</p>
+            <p>• استخدم أدوات الصمت/الصمم أثناء المحادثة</p>
+            <p>• المحادثة الصوتية مشفرة من نظير إلى نظير</p>
           </div>
         </div>
       )}
@@ -244,9 +244,9 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
       {/* Connection Status */}
       {isConnected && (
         <div className="pt-3 border-t border-metallic/20">
-          <div className="text-xs text-text-muted font-mono flex items-center gap-2">
+          <div className="text-xs text-text-muted font-mono flex items-center gap-2" dir="rtl">
             <Wifi className="w-3 h-3 text-green-500" />
-            Voice chat active • P2P encrypted • Real-time communication
+            المحادثة الصوتية نشطة • مشفرة P2P • تواصل في الوقت الفعلي
           </div>
         </div>
       )}
